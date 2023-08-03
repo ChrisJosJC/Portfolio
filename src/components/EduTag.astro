@@ -1,0 +1,28 @@
+---
+interface Props {
+  ended: Boolean;
+  place: string;
+  name: string;
+}
+
+const { ended, place, name } = Astro.props;
+---
+
+<article
+  id="IPPFM"
+  class:list={[
+    "inline-flex justify-between items-center gap-2 h-auto font-bold bg-black py-2 px-4 rounded-3xl after:w-4 after:h-4 after:inline-block after:z-10 after:rounded-[50%] transition-all after:ml-3 after:bg-gradient-to-br after:from-white",
+    ended ? "after:to-green-600" : "after:to-red-600 after:animate-pulse",
+  ]}
+>
+  <div>
+    <h1 class="text-white text-lg transition-all">{place}</h1>
+    <p class="hover:opacity-1 text-white opacity-70">{name}</p>
+  </div>
+</article>
+
+<style>
+    #IPPFM:hover>div>h1{
+            font-size: 2rem !important;
+        }
+</style>

@@ -1,0 +1,68 @@
+---
+// interface Props{
+// 	zoom: Boolean,
+// } 
+
+// const { zoom } = Astro.props
+
+import ArrowBtn from "../components/ArrowBtn.astro";
+---
+
+<section id="about" class:list={["grid place-items-center h-full w-screen"]}>
+    <img src="/spaceship.png" alt="Animacion de un astronauta" class="opacity-30 absolute z-10 animate-spin" />
+    <div class="z-30">
+        <h1 id="loader-text" class="text-4xl text-white"></h1>
+        <p id="loader-paragraph" class="text-white text-2xl"></p>
+    </div>
+	<ArrowBtn href="#skills" pos="r" />
+	<ArrowBtn href="#education" pos="br" />
+	<ArrowBtn href="#projects" pos="b" />
+</section>
+
+<style>
+	img{
+		z-index: -10;
+		animation-duration: 60s !important;
+	}
+</style>
+
+<script>
+	import "https://unpkg.com/typewriter-effect@latest/dist/core.js"
+  	let loaderText = document.getElementById("loader-text");
+  	let loaderParagraph = document.getElementById("loader-paragraph");
+
+	let customNodeCreator = function (character) {
+    	return document.createTextNode(character);
+  	};
+
+  	let typewriter = new Typewriter(loaderText, {
+		strings: ["Hello World!", "I am..."],
+  		autoStart: true,
+    	delay: 60,
+    	onCreateTextNode: customNodeCreator,
+  	});
+
+  	typewriter
+  	.typeString("<span class='italic'>Chris Joseph J.C</span>")
+  	.pauseFor(100)
+  	.start();
+
+  	typewriter = new Typewriter(loaderParagraph, {
+        delay:75,
+    	onCreateTextNode: customNodeCreator,
+  	});
+
+  	typewriter
+  	.pauseFor(300)
+  	.typeString(`A passionate developer on Frontend
+    <br> and Development Web.`)
+    .callFunction(()=>{
+        loaderParagraph.innerHTML += `
+    <div class="flex justify-between">
+        <a class="text-white/50 hover:text-indigo-500 outline-none" href="https://github.com/ChrisJosJC" target="_blank" rel="noopener noreferrer">Github</a>
+        <a class="text-white/50 hover:text-blue-400 outline-none" href="https://www.linkedin.com/in/chrisjosjc/" target="_blank" rel="noopener noreferrer">Linkedin</a>    
+    </div>`
+    })
+  	.start();
+
+</script>

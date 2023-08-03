@@ -1,0 +1,32 @@
+---
+import ArrowBtn from "../components/ArrowBtn.astro";
+// import Card from "../components/Card.astro"
+import Program from "../components/Program.astro";
+---
+
+<section
+  id="projects"
+  class="w-screen h-screen bg-gradient-to-tr to-stone-800 from-slate-800 p-4 relative"
+>
+  <h1 class="text-4xl mt-3 text-white text-center">Projects</h1>
+  <p class="text-white text-center">&#123 Tap a shortcut to see it fully; &#125</p>
+
+  <div class="panel grid grid-cols-3 place-items-center w-screen grid-rows-3 pl-[20vw] pr-[22vw] py-10 gap-10">  
+    <Program name="Binary" img="/binary.ico" href="https://binary-cj.netlify.app/" />
+    <Program name="Feedback" img="/feedback.png" href="https://feedback-sand.vercel.app/" />
+    <Program name="Cloger" img="/cloger.ico" href="https://cloger.netlify.app/" />
+    <Program name="Piniors" img="/piniors.ico" href="https://piniors.com" />
+  </div>
+
+  <!-- Button navs -->
+  <ArrowBtn href="#about" pos="t_l" />
+  <ArrowBtn href="#skills" pos="tr" />
+  <ArrowBtn href="#education" pos="r" />
+</section>
+
+<style>
+  .panel{
+    display:grid;
+    grid-template-colums:repeat(auto-fit, minmax(1fr,300px)) !important;
+  }
+</style>

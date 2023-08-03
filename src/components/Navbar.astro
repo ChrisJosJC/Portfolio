@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<div class="w-screen grid place-items-center relative">
+  <nav id="navbar_"
+  class="bg-white rounded-3xl p-2 mx-auto fixed bottom-12 flex justify-between max-w-xl w-3/4 z-40 border-indigo-800 border-4 border-solid"
+  >
+    <a
+      href="#about"
+      class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+    >
+      About</a
+    >
+    <a
+      href="#projects"
+      class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+    >
+      Projects</a
+    >
+    <span class="opacity-0">AAA</span>
+    <a
+      href="#skills"
+      class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+    >
+      Skills</a
+    >
+    <a
+      href="#education"
+      class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-xs"
+    >
+      Education</a
+    >
+    <button id="contact" class="text-white bg-indigo-800 p-0 w-8 h-8 absolute left-[46%] bottom-[2rem] rounded-[50%] grid place-items-center cursor-pointer hover:scale-110 hover:opacity-100"><Icon name="mdi:arrow-up-drop-circle" class=" h-[70%] object-cover"></Icon></button>
+  </nav>
+</div>
+
+<script>
+  const sections = ["#about", "#skills", "#projects", "#education"];
+
+  const moveTo = (el) => {
+    document.getElementById(el).scrollIntoView({
+      behavior: "smooth",
+    });
+    window.location.hash = "#" + el;
+    let { hash } = window.location;
+    var posUser = sections.findIndex(hashes => hashes === hash);
+  };
+
+  document.addEventListener("keydown", (e) => {
+    switch (e.key) {
+      case "1":
+        moveTo("about");
+        break;
+      case "2":
+        moveTo("skills");
+        break;
+      case "3":
+        moveTo("projects");
+        break;
+      case "4":
+        moveTo("education");
+        break;
+
+      default:
+        break;
+    }
+  });
+  
+  document.getElementById("contact").addEventListener("click", (e)=>{
+
+  })
+
+</script>

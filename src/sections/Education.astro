@@ -1,0 +1,28 @@
+---
+import ArrowBtn from "../components/ArrowBtn.astro";
+import EduTag from "../components/EduTag.astro";
+---
+
+<main
+  id="education"
+  class="w-screen h-screen bg-gradient-to-tl to-stone-800 from-slate-800 p-4 relative px-[20vw]"
+>
+  <h1 class="text-4xl mt-3 mb-4 text-white text-center">
+    Institutes and Education
+  </h1>
+  <section class="relative flex flex-col gap-4">
+
+    <hr
+      class="rotate-180 border-dashed h-full border-2 absolute left-[-14px] mt-4"
+    />
+
+    <EduTag ended={true} name="Taller de hacking etico" place="ITLA, SPM R.D - 2023" />
+    <EduTag ended={false} name="Tecnico de nivel bachillerato en Informatica" place="IPPFM, SPM R.D - en curso" />
+
+  </section>
+  <!-- Button navs -->
+  <ArrowBtn href="#skills" pos="t_r" />
+  <ArrowBtn href="#projects" pos="l" />
+  <ArrowBtn href="#about" pos="tl" />
+</main>
+

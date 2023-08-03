@@ -1,0 +1,22 @@
+---
+interface Props {
+  href: string;
+  name: string;
+  img: string;
+}
+
+const {
+  href = "#projects",
+  name = "Unknowd",
+  img = "/default.png",
+} = Astro.props;
+---
+
+<a
+  draggable
+  href={href}
+  target="_blank"
+  class="flex items-center justify-center flex-col bg-blue-700/5 outline-blue-700 outline-2 outline w-24 h-24 p-4 cursor-pointer text-white gap-1 hover:bg-blue-700/30 hover:scale-95"
+>
+  <img src={img} />{name}</a
+>

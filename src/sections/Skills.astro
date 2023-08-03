@@ -1,0 +1,45 @@
+---
+import ArrowBtn from "../components/ArrowBtn.astro";
+import Tag from "../components/Tag.astro";
+import PreClass from "../components/PreClass.astro";
+---
+
+<section
+  id="skills"
+  class="zoom w-screen h-screen bg-gradient-to-bl to-stone-800 from-slate-800 p-4 relative"
+>
+  <h1 class="text-4xl mt-3 text-white text-center">Skills</h1>
+
+  <div class="grid grid-cols-4 mx-20 pt-2 gap-4">
+
+  <h2 class="text-4xl mt-3 text-white col-span-full">Languages</h2>
+    <Tag from="orange-600" text="HTML5" />
+    <Tag from="blue-500" text="CSS3" />
+   <Tag from="yellow-400" text="Javascript" />
+    <Tag from="blue-700" text="React" />
+    <Tag from="yellow-400" text="Python" />
+    <Tag from="green-700" text="NodeJS" />
+    <Tag from="blue-300" text="Tailwind" />
+    <Tag from="gray-700" text="SQL" />
+    <Tag from="orange-700" text="Astro" />
+    <Tag from="purple-800" text="PHP" />
+    <Tag from="red-600" text="Git" />
+    <Tag from="red-600" to="blue-700" text="English" />
+
+
+    <h2 class="text-4xl mt-3 text-white col-span-full">Softwares</h2>
+
+    <Tag from="red-500" text="Figma" />
+    <Tag from="blue-800" text="Photoshop" />
+    <Tag from="yellow-500" text="SQL Server" />
+    <Tag from="green-500" text="Terminal" />
+  </div>
+  <!-- Nav buttons -->
+  <ArrowBtn href="#about" pos="l" />
+  <ArrowBtn href="#projects" pos="bl" />
+  <ArrowBtn href="#education" pos="b" />
+</section>
+
+<style>
+
+</style>

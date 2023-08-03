@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon'
+
+interface Props {
+	href: string;
+    pos: string
+}
+
+const { href, pos } = Astro.props;
+---
+<a href={href} class:list={["bg-white text-black rounded-[50%] w-8 h-8 p-2 box-border font-black grid place-items-center z-20", pos]} ><Icon name="mdi:arrow-left" /></a>
+
+<style>
+    /* Animations when are visibles */
+    @keyframes show{
+        from{
+            opacity: 0;
+            scale:25%
+        }
+        to{
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+
+
+    /* Buttons types */
+    .tl{
+        position: absolute;
+        top:2.2rem;
+        left:2.5rem;
+        rotate: 45deg;
+    }
+    .tr{
+        position: absolute;
+        top:2.2rem;
+        right:2.5rem;
+        rotate: 140deg
+    }
+    .br{
+        position: absolute;
+        bottom:0.6rem;
+        right:2.5rem;
+        rotate: 225deg;
+    }
+    .bl{
+        position: absolute;
+        bottom:2.2rem;
+        left:2.5rem;
+        rotate: -45deg;
+    }
+    .b{
+        position: absolute;
+        bottom:0.6rem;
+        left:48.5%;
+        rotate: -90deg;
+    }
+    .t_r{
+        position: absolute;
+        top:2.2rem;
+        right:2.5rem;
+        rotate: 90deg
+
+    }
+    .t_l{
+        position: absolute;
+        top:2.2rem;
+        left:2.5rem;
+        rotate: 90deg
+
+    }
+    .r{
+        position: absolute;
+        right:2.4rem;
+        top:48%;
+        rotate: 180deg; 
+    }
+    .l{
+        position: absolute;
+        left:2.6rem;
+        top:48%;
+        rotate: 0deg; 
+    }
+</style>

@@ -1,0 +1,15 @@
+---
+interface Props{
+    from: string,
+    to?: string,
+    text: string,
+}
+
+const { from="yellow-600",text, to = "slate-800"} = Astro.props
+---
+
+<h3
+  class=`card text-lg text-white bg-gradient-to-br rounded-lg px-2 py-2 font-bold hover:scale-95 transition-transform flex item-center gap-3 hover:animate-pulse before:w-2 before:h-2 before:rounded-[50%] before:bg-slate-800 before:inline-block after:w-2 after:h-2 after:rounded-[50%] after:bg-slate-800 after:inline-block after:ml-auto from-${from} to-${to}`
+>
+  {text}
+</h3>
