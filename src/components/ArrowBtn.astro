@@ -8,7 +8,7 @@ interface Props {
 
 const { href, pos } = Astro.props;
 ---
-<a href={href} class:list={["bg-white text-black rounded-[50%] w-8 h-8 p-2 box-border font-black grid place-items-center z-20", pos]} ><Icon name="mdi:arrow-left" /></a>
+<a href=`#${href}` title={href.toUpperCase()} class:list={["bg-white text-black rounded-[50%] w-8 h-8 p-2 box-border font-black grid place-items-center z-20", pos]} ><Icon name="mdi:arrow-left" /></a>
 
 <style>
     /* Animations when are visibles */

@@ -8,9 +8,9 @@ import ArrowBtn from "../components/ArrowBtn.astro";
         <h1 id="loader-text" class="text-4xl text-white"></h1>
         <p id="loader-paragraph" class="text-white text-2xl"></p>
     </div>
-	<ArrowBtn href="#skills" pos="r" />
-	<ArrowBtn href="#education" pos="br" />
-	<ArrowBtn href="#projects" pos="b" />
+	<ArrowBtn href="skills" pos="r" />
+	<ArrowBtn href="education" pos="br" />
+	<ArrowBtn href="projects" pos="b" />
 </section>
 
 <style>
@@ -21,7 +21,7 @@ import ArrowBtn from "../components/ArrowBtn.astro";
 </style>
 
 <script>
-	import "https://unpkg.com/typewriter-effect@latest/dist/core.js"
+	import "https://unpkg.com/typewriter-effect@latest/dist/core.js";
   	let loaderText = document.getElementById("loader-text");
   	let loaderParagraph = document.getElementById("loader-paragraph");
 
