@@ -8,10 +8,12 @@ import { Icon } from "astro-icon";
   <div
     class="bg-white rounded-3xl p-2 mx-auto fixed flex flex-col justify-between max-w-xl w-3/4 z-40 border-indigo-800 border-4 border-solid gap-2 box-border"
   >
-    <form id="form_contact" class="flex w-full gap-2 items-center overflow-hidden h-0 transition-all">
+    <form id="form_contact" class="w-full gap-2 items-center overflow-hidden h-0 transition-all hidden" action="https://formsubmit.co/chrisjoseph380@gmail.com" method="POST">
       <div id="form_inputs" class="flex flex-col w-full gap-0">
+        <input type="text" name="name" value="Contratador" class="hidden">
         <input
         type="text"
+        name="email"
         placeholder="Ingresa tu correo electronico."
         class="outline-none text-white p-2 rounded-md bg-slate-700 w-full"
       />
@@ -26,26 +28,26 @@ import { Icon } from "astro-icon";
     <nav id="navbar_" class="flex justify-between">
       <a
         href="#about"
-        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
       >
         About</a
       >
       <a
         href="#projects"
-        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
       >
         Projects</a
       >
       <span class="opacity-0">AAA</span>
       <a
         href="#skills"
-        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
+        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:text-indigo-800 hover:font-semibold transition-transform sm:text-sm"
       >
         Skills</a
       >
       <a
         href="#education"
-        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:-translate-y-px hover:text-indigo-800 hover:font-semibold transition-transform sm:text-xs"
+        class="flex items-center text-lg px-3 text-black md:text-base hover:scale-105 hover:text-indigo-800 hover:font-semibold transition-transform sm:text-xs"
       >
         Education</a
       >
@@ -97,10 +99,12 @@ import { Icon } from "astro-icon";
 
   $("#contact").addEventListener("click", (e) => {
     if (!toggleContact) {
+      $("#form_contact").classList.replace("hidden", "flex")
       $("#contact").classList.replace("rotate-0", "rotate-180")
       $("#form_contact").classList.replace(HEIGHTS_CONTACT[0], HEIGHTS_CONTACT[levelHeight])
     }
     if (toggleContact) {
+      $("#form_contact").classList.replace("flex","hidden")
       $("#contact").classList.replace("rotate-180", "rotate-0")
       $("#form_contact").classList.replace(HEIGHTS_CONTACT[levelHeight], HEIGHTS_CONTACT[0])
     }
@@ -108,7 +112,7 @@ import { Icon } from "astro-icon";
   });
 
   document.addEventListener("submit",(e)=>{
-  e.preventDefault()
+  if (levelHeight==1) e.preventDefault()
     levelHeight++
     $("#form_contact").classList.replace(HEIGHTS_CONTACT[levelHeight-1], HEIGHTS_CONTACT[levelHeight])
     $("#form_inputs").classList.replace("gap-0", "gap-2")
